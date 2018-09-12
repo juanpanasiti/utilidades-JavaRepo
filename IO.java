@@ -96,6 +96,37 @@ public class IO {
         }
         return diferencia;
     } // FIN difHora()
+    
+    public static String fPesos(float monto){
+        return "$" + String.format("%.2f", monto);
+    } // FIN fPesos
+    
+    public static void continuar(){
+        Scanner key;
+        printInColor("rojo","Presione [ENTER] para continuar...");
+        key = new Scanner(System.in);
+        key.nextLine();
+    }// FIN continuar
+    
+    public static void saltoLinea(int cantSaltos){
+        for(int i = 0; i < cantSaltos; i++){
+            System.out.println("");
+        }
+    } // FIN saltoLinea
+    
+    public static String formatoHora(int hora, int minutos){
+        String sHora, sMin;
+        if (hora < 10)
+            sHora = "0" + hora;
+        else
+            sHora = "" + hora;
+        
+        if (minutos < 10)
+            sMin = "0" + minutos;
+        else
+            sMin = "" + minutos;
+        return (sHora + ":" + sMin);
+    }
 } // FIN Clase IOUtils
 
 
